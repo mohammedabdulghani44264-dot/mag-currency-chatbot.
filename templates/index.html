@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aurelius — Currency Conversion</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%B1%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>Aurelius</h1>
+      <p>Currency conversion, performed by the only one qualified to do it.</p>
+    </div>
+  </header>
+
+  <main class="chat" aria-label="Conversation">
+    <ol id="log" class="log" aria-live="polite"></ol>
+
+    <div class="dock">
+      <div class="chips" id="chips">
+        <button type="button" class="chip">100 USD to INR</button>
+        <button type="button" class="chip">5 lakh rupees in dollars</button>
+        <button type="button" class="chip">€50 into yen, pounds and rupees</button>
+        <button type="button" class="chip">list currencies</button>
+      </div>
+      <form id="composer" class="composer" autocomplete="off">
+        <label for="input" class="sr-only">Your message</label>
+        <input id="input" type="text" maxlength="{{ max_length }}"
+               placeholder="Try: how much is 2.5k GBP in AED?" autofocus>
+        <button type="submit" id="send">Send</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
